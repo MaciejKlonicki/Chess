@@ -17,8 +17,8 @@ public class GamePanel  extends JFrame {
     int b_knight_col2 = 6;
 
     GamePanel () {
-        Knight knight1 = new Knight(chessBoardButtons, 1, b_knight_row, b_knight_col);
-        Knight knight2 = new Knight(chessBoardButtons, 2, b_knight_row2, b_knight_col2);
+        Knight knight1 = new Knight(chessBoardButtons);
+        Knight knight2 = new Knight(chessBoardButtons);
 
         Container container = getContentPane();
         container.setLayout(new GridLayout(8,8));
