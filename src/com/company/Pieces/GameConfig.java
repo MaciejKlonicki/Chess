@@ -41,46 +41,12 @@ public class GameConfig implements MouseListener {
         this.chessBoardButtons = chessBoardButtons;
     }
 
-    public boolean isValidMove(int i, int j) {
+    public boolean isValidKnightMove(int i, int j) {
         if (playerTurn) {
             int rowDelta = Math.abs((i - b_knight_row));
             int colDelta = Math.abs((j - b_knight_col));
             int rowDelta2 = Math.abs((i - b_knight_row2));
             int colDelta2 = Math.abs((j - b_knight_col2));
-
-            int towDelta = Math.abs((i - b_tower_row));
-            int tolDelta = Math.abs((j - b_tower_col));
-//            int towDelta2 = Math.abs((i - b_tower_row2));
-//            int tolDelta2 = Math.abs((j - b_tower_col2));
-
-            int offset;
-            if (towDelta != i){
-                if (towDelta < i){
-                offset = 1;
-            } else {
-                    offset = -1;
-                }
-                for (int x = towDelta + offset; x != i; x += offset) {
-                    if (chessBoardButtons[x][tolDelta] != null) {
-                        return false;
-                    }
-                }
-            }
-
-            if (tolDelta != j) {
-                if (tolDelta < j) {
-                    offset = 1;
-                }
-             else{
-                    offset = -1;
-                }
-
-                for (int x = tolDelta + offset; x != j; x += offset) {
-                    if (chessBoardButtons[towDelta][x] != null) {
-                        return false;
-                    }
-                }
-            }
 
             if (((rowDelta == 1) && (colDelta == 2)) || ((rowDelta2 == 1) && (colDelta2 == 2))) {
                 return true;
@@ -93,16 +59,17 @@ public class GameConfig implements MouseListener {
                     int rowDelta4 = Math.abs((i - w_knight_row2));
                     int colDelta4 = Math.abs((j - w_knight_col2));
 
-//                    int towDelta3 = Math.abs((i - w_tower_row));
-//                    int tolDelta3 = Math.abs((j - w_tower_col));
-//                    int towDelta4 = Math.abs((i - w_tower_row2));
-//                    int tolDelta4 = Math.abs((j - w_tower_col2));
-
                     if ((rowDelta3 == 1) && (colDelta3 == 2) || (rowDelta4 == 1) && (colDelta4 == 2)) {
                         return true;
                     }
                     return ((colDelta3 == 1) && (rowDelta3 == 2) || (colDelta4 == 1) && (rowDelta4 == 2));
                 }
+            }
+    public boolean isValidRookMove(int i, int j) {
+        if (playerTurn) {
+            int rowDelta = Math.abs((i - b_tower_row));
+            int colDelta = Math.abs((j - b_tower_col));
+        }
             }
 
     @Override
@@ -116,7 +83,7 @@ public class GameConfig implements MouseListener {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (source == chessBoardButtons[i][j]) {
-                    if (!isValidMove(i, j)) {
+                    if (!isValidKnightMove(i, j) || (!isValidRookMove(i, j))) {
                         return;
                     }
                     if (playerTurn) {
