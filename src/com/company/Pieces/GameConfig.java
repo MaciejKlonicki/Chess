@@ -56,6 +56,11 @@ public class GameConfig implements MouseListener {
                     return true;
                 }
             }
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (tolDelta == x && towDelta == 0) {
+                    return true;
+                }
+            }
 
             if (((rowDelta == 1) && (colDelta == 2)) || ((rowDelta2 == 1) && (colDelta2 == 2))) {
                 return true;
