@@ -50,6 +50,8 @@ public class GameConfig implements MouseListener {
 
             int towDelta = Math.abs((i - b_tower_row));
             int tolDelta = Math.abs((j - b_tower_col));
+            int towDelta2 = Math.abs((i - b_tower_row2));
+            int tolDelta2 = Math.abs((j - b_tower_col2));
 
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta == x && tolDelta == 0) {
@@ -58,6 +60,16 @@ public class GameConfig implements MouseListener {
             }
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (tolDelta == x && towDelta == 0) {
+                    return true;
+                }
+            }
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (towDelta2 == x && tolDelta2 == 0) {
+                    return true;
+                }
+            }
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (tolDelta2 == x && towDelta2 == 0) {
                     return true;
                 }
             }
@@ -72,6 +84,32 @@ public class GameConfig implements MouseListener {
                     int colDelta3 = Math.abs(j - w_knight_col);
                     int rowDelta4 = Math.abs(i - w_knight_row2);
                     int colDelta4 = Math.abs(j - w_knight_col2);
+
+                    int towDelta3 = Math.abs(i - w_tower_row);
+                    int tolDelta3 = Math.abs(j - w_tower_col);
+                    int towDelta4 = Math.abs(i - w_tower_row2);
+                    int tolDelta4 = Math.abs(j - w_tower_col2);
+
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (towDelta3 == x && tolDelta3 == 0) {
+                    return true;
+                }
+            }
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (tolDelta3 == x && towDelta3 == 0) {
+                    return true;
+                }
+            }
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (towDelta4 == x && tolDelta4 == 0) {
+                    return true;
+                }
+            }
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (tolDelta4 == x && towDelta4 == 0) {
+                    return true;
+                }
+            }
 
                     if ((rowDelta3 == 1) && (colDelta3 == 2) || (rowDelta4 == 1) && (colDelta4 == 2)) {
                         return true;
