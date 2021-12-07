@@ -48,6 +48,15 @@ public class GameConfig implements MouseListener {
             int rowDelta2 = Math.abs((i - b_knight_row2));
             int colDelta2 = Math.abs((j - b_knight_col2));
 
+            int towDelta = Math.abs((i - b_tower_row));
+            int tolDelta = Math.abs((j - b_tower_col));
+
+            for (int x = 0 ; x <= 7 ; ++ x) {
+                if (towDelta == x && tolDelta == 0) {
+                    return true;
+                }
+            }
+
             if (((rowDelta == 1) && (colDelta == 2)) || ((rowDelta2 == 1) && (colDelta2 == 2))) {
                 return true;
             }
@@ -67,10 +76,7 @@ public class GameConfig implements MouseListener {
             }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-                source = e.getSource();
-    }
-
+    public void mouseClicked(MouseEvent e) { source = e.getSource(); }
 
     @Override
     public void mouseReleased(MouseEvent e) {
