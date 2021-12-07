@@ -1,7 +1,7 @@
 package com.company;
 
 
-import com.company.Pieces.Knight;
+import com.company.Pieces.GameConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,10 +15,21 @@ public class GamePanel  extends JFrame {
     int b_knight_col = 1;
     int b_knight_row2 = 7;
     int b_knight_col2 = 6;
+    int w_knight_row2 = 0;
+    int w_knight_col2 = 6;
+    int w_knight_row = 0;
+    int w_knight_col = 1;
+    int b_tower_row = 7;
+    int b_tower_col = 0;
+    int b_tower_row2 = 7;
+    int b_tower_col2 = 7;
+    int w_tower_row = 0;
+    int w_tower_col = 0;
+    int w_tower_row2 = 0;
+    int w_tower_col2 = 7;
 
     GamePanel () {
-        Knight knight1 = new Knight(chessBoardButtons);
-        Knight knight2 = new Knight(chessBoardButtons);
+        GameConfig gameConfig = new GameConfig(chessBoardButtons);
 
         Container container = getContentPane();
         container.setLayout(new GridLayout(8,8));
@@ -31,17 +42,12 @@ public class GamePanel  extends JFrame {
                     chessBoardButtons[i][j].setBackground(new Color(50,100,100));
                 }
                 container.add(chessBoardButtons[i][j]);
-                chessBoardButtons[i][j].addMouseListener(knight1);
-                chessBoardButtons[i][j].addMouseListener(knight2);
+                chessBoardButtons[i][j].addMouseListener(gameConfig);
             }
         }
-        int w_knight_row = 0;
-        int w_knight_col = 1;
         ImageIcon w_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
         chessBoardButtons[w_knight_row][w_knight_col].setIcon(w_knightIcon);
 
-        int w_knight_row2 = 0;
-        int w_knight_col2 = 6;
         ImageIcon w_knightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
         chessBoardButtons[w_knight_row2][w_knight_col2].setIcon(w_knightIcon2);
 
@@ -50,6 +56,18 @@ public class GamePanel  extends JFrame {
 
         ImageIcon b_knightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
         chessBoardButtons[b_knight_row2][b_knight_col2].setIcon(b_knightIcon2);
+
+        ImageIcon b_towerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
+        chessBoardButtons[b_tower_row][b_tower_col].setIcon(b_towerIcon);
+
+        ImageIcon b_towerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
+        chessBoardButtons[b_tower_row2][b_tower_col2].setIcon(b_towerIcon2);
+
+        ImageIcon w_towerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+        chessBoardButtons[w_tower_row][w_tower_col].setIcon(w_towerIcon);
+
+        ImageIcon w_towerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+        chessBoardButtons[w_tower_row2][w_tower_col2].setIcon(w_towerIcon2);
 
         setSize(800,800);
         setResizable(false);
