@@ -203,6 +203,36 @@ public class GameConfig implements MouseListener {
                             playerTurn = true;
                         }
                     }
+                    if (playerTurn) {
+                        if (e.getSource() == chessBoardButtons[b_bishop_row][b_bishop_col]) {
+                            chessBoardButtons[b_bishop_row][b_bishop_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_bishopIcon);
+                            b_bishop_row = i;
+                            b_bishop_col = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_bishop_row2][b_bishop_col2]) {
+                            chessBoardButtons[b_bishop_row2][b_bishop_col2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_bishopIcon2);
+                            b_bishop_row2 = i;
+                            b_bishop_col2 = j;
+                            playerTurn = false;
+                        }
+                    }
+                    else {
+                        if (e.getSource() == chessBoardButtons[w_bishop_row][w_bishop_col]) {
+                            chessBoardButtons[w_bishop_row][w_bishop_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_bishopIcon);
+                            w_bishop_row = i;
+                            w_bishop_col = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_bishop_row2][w_bishop_col2]) {
+                            chessBoardButtons[w_bishop_row2][w_bishop_col2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_bishopIcon2);
+                            w_bishop_row2 = i;
+                            w_bishop_col2 = j;
+                            playerTurn = true;
+                        }
+                    }
                     return;
                 }
             }
