@@ -27,6 +27,14 @@ public class GamePanel  extends JFrame {
     int w_tower_col = 0;
     int w_tower_row2 = 0;
     int w_tower_col2 = 7;
+    int b_bishop_row = 7;
+    int b_bishop_col = 2;
+    int b_bishop_row2 = 7;
+    int b_bishop_col2 = 5;
+    int w_bishop_row = 0;
+    int w_bishop_col = 2;
+    int w_bishop_row2 = 0;
+    int w_bishop_col2 = 5;
 
     GamePanel () {
         GameConfig gameConfig = new GameConfig(chessBoardButtons);
@@ -68,6 +76,18 @@ public class GamePanel  extends JFrame {
 
         ImageIcon w_towerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
         chessBoardButtons[w_tower_row2][w_tower_col2].setIcon(w_towerIcon2);
+
+        ImageIcon b_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+        chessBoardButtons[b_bishop_row][b_bishop_col].setIcon(b_bishopIcon);
+
+        ImageIcon b_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+        chessBoardButtons[b_bishop_row2][b_bishop_col2].setIcon(b_bishopIcon2);
+
+        ImageIcon w_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
+        chessBoardButtons[w_bishop_row][w_bishop_col].setIcon(w_bishopIcon);
+
+        ImageIcon w_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
+        chessBoardButtons[w_bishop_row2][w_bishop_col2].setIcon(w_bishopIcon2);
 
         setSize(800,800);
         setResizable(false);

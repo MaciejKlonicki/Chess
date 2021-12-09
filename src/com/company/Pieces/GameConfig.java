@@ -35,6 +35,20 @@ public class GameConfig implements MouseListener {
     private int b_tower_row2 = 7;
     private int b_tower_col2 = 7;
 
+    private final ImageIcon w_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
+    private int w_bishop_row = 0;
+    private int w_bishop_col = 2;
+    private final ImageIcon w_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+    private int w_bishop_row2 = 0;
+    private int w_bishop_col2 = 5;
+
+    private final ImageIcon b_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+    private int b_bishop_row = 7;
+    private int b_bishop_col = 2;
+    private final ImageIcon b_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+    private int b_bishop_row2 = 7;
+    private int b_bishop_col2 = 5;
+
     private final JButton [][] chessBoardButtons;
 
     public GameConfig(JButton [][] chessBoardButtons) {
