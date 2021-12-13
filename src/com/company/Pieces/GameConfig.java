@@ -72,10 +72,10 @@ public class GameConfig implements MouseListener {
             int bowDelta2 = Math.abs((i - b_bishop_row2));
             int bolDelta2 = Math.abs((j - b_bishop_col2));
 
-            if (bowDelta % 2 == 1 && bolDelta == 1 || bolDelta == 3 || bolDelta == 5 || bolDelta == 7) {
+            if (bowDelta % 2 == 1 && bolDelta == 0) {
                 return true;
             }
-            if (bowDelta % 2 != 1 && bolDelta == 0 || bolDelta == 2 || bolDelta == 4 || bolDelta == 6){
+            if (bowDelta % 2 == 1 && bolDelta == 2) {
                 return true;
             }
 
