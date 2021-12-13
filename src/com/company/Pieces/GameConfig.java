@@ -67,6 +67,18 @@ public class GameConfig implements MouseListener {
             int towDelta2 = Math.abs((i - b_tower_row2));
             int tolDelta2 = Math.abs((j - b_tower_col2));
 
+            int bowDelta = Math.abs((i - b_bishop_row));
+            int bolDelta = Math.abs((j - b_bishop_col));
+            int bowDelta2 = Math.abs((i - b_bishop_row2));
+            int bolDelta2 = Math.abs((j - b_bishop_col2));
+
+            if (bowDelta % 2 == 1 && bolDelta == 1 || bolDelta == 3 || bolDelta == 5 || bolDelta == 7) {
+                return true;
+            }
+            if (bowDelta % 2 != 1 && bolDelta == 0 || bolDelta == 2 || bolDelta == 4 || bolDelta == 6){
+                return true;
+            }
+
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta == x && tolDelta == 0) {
                     return true;
@@ -88,12 +100,9 @@ public class GameConfig implements MouseListener {
                 }
             }
 
-            if (((rowDelta == 1) && (colDelta == 2)) || ((rowDelta2 == 1) && (colDelta2 == 2))) {
-                return true;
-            }
-            return ((colDelta == 1) && (rowDelta == 2) || (colDelta2 == 1) && (rowDelta2 == 2));
+            return ((rowDelta == 1) && (colDelta == 2)) || ((rowDelta2 == 1) && (colDelta2 == 2)) || (colDelta == 1) && (rowDelta == 2) || (colDelta2 == 1) && (rowDelta2 == 2);
 
-                } else {
+        } else {
                     int rowDelta3 = Math.abs(i - w_knight_row);
                     int colDelta3 = Math.abs(j - w_knight_col);
                     int rowDelta4 = Math.abs(i - w_knight_row2);
@@ -130,7 +139,7 @@ public class GameConfig implements MouseListener {
                     }
                     return ((colDelta3 == 1) && (rowDelta3 == 2) || (colDelta4 == 1) && (rowDelta4 == 2));
                 }
-            }
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) { source = e.getSource(); }
