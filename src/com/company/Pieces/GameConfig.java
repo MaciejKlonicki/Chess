@@ -38,7 +38,7 @@ public class GameConfig implements MouseListener {
     private final ImageIcon w_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
     private int w_bishop_row = 0;
     private int w_bishop_col = 2;
-    private final ImageIcon w_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+    private final ImageIcon w_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
     private int w_bishop_row2 = 0;
     private int w_bishop_col2 = 5;
 
@@ -77,6 +77,11 @@ public class GameConfig implements MouseListener {
                     return true;
                 }
             }
+            for (int x = 0 ; x <= 7 ; ++x){
+                if (bowDelta2 == x && (bolDelta2 == 1 || bolDelta2 == 2 || bolDelta2 == 3 || bolDelta2 == 4 || bolDelta2 == 5 || bolDelta2 == 6)){
+                    return true;
+                }
+            }
 
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta == x && tolDelta == 0) {
@@ -111,6 +116,22 @@ public class GameConfig implements MouseListener {
                     int tolDelta3 = Math.abs(j - w_tower_col);
                     int towDelta4 = Math.abs(i - w_tower_row2);
                     int tolDelta4 = Math.abs(j - w_tower_col2);
+
+                    int bowDelta3 = Math.abs(i - w_bishop_row);
+                    int bolDelta3 = Math.abs(j - w_bishop_col);
+                    int bowDelta4 = Math.abs(i - w_bishop_row2);
+                    int bolDelta4 = Math.abs(j - w_bishop_col2);
+
+            for (int x = 0 ; x <= 7 ; ++x){
+                if (bowDelta3 == x && (bolDelta3 == 1 || bolDelta3 == 2 || bolDelta3 == 3 || bolDelta3 == 4 || bolDelta3 == 5 || bolDelta3 == 6)){
+                    return true;
+                }
+            }
+            for (int x = 0 ; x <= 7 ; ++x){
+                if (bowDelta4 == x && (bolDelta4 == 1 || bolDelta4 == 2 || bolDelta4 == 3 || bolDelta4 == 4 || bolDelta4 == 5 || bolDelta4 == 6)){
+                    return true;
+                }
+            }
 
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta3 == x && tolDelta3 == 0) {
