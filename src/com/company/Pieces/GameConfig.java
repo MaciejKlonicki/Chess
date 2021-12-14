@@ -56,6 +56,13 @@ public class GameConfig implements MouseListener {
     private int w_queen_row = 0;
     private int w_queen_col = 3;
 
+    private final ImageIcon b_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king.png");
+    private int b_king_row = 7;
+    private int b_king_col = 4;
+    private final ImageIcon w_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king_w.png");
+    private int w_king_row = 0;
+    private int w_king_col = 4;
+
     private final JButton [][] chessBoardButtons;
 
     public GameConfig(JButton [][] chessBoardButtons) {
@@ -79,6 +86,19 @@ public class GameConfig implements MouseListener {
 
             return ((rowDelta3 == 1) && (colDelta3 == 2)) || ((rowDelta4 == 1) && (colDelta4 == 2)) || ((colDelta3 == 1) && (rowDelta3 == 2)) || ((colDelta4 == 1) && (rowDelta4 == 2));
                 }
+    }
+
+    public boolean isKingValidMove (int i, int j) {
+        if (playerTurn){
+            int kowDelta = Math.abs((i - b_king_row));
+            int kolDelta = Math.abs((j - b_king_col));
+            return kowDelta == 1 && kolDelta == 1;
+        }
+        else {
+            int kowDelta2 = Math.abs((i - w_king_row));
+            int kolDelta2 = Math.abs((j - w_king_col));
+            return kowDelta2 == 1 && kolDelta2 == 1;
+        }
     }
 
     public boolean isQueenValidMove (int i, int j) {
@@ -209,10 +229,11 @@ public class GameConfig implements MouseListener {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (source == chessBoardButtons[i][j]) {
-                    if (!isKnightValidMove(i, j) && (!isRookValidMove(i, j)) && (!isBishopValidMove(i, j)) && (!isQueenValidMove(i, j))) {
+                    if (!isKnightValidMove(i, j) && (!isRookValidMove(i, j)) && (!isBishopValidMove(i, j)) && (!isQueenValidMove(i, j)) && (!isKingValidMove(i, j))) {
                         return;
                     }
                     if (playerTurn) {
+                        System.out.println("BLACK");
                         if (e.getSource() == chessBoardButtons[b_knight_row][b_knight_col]) {
                             chessBoardButtons[b_knight_row][b_knight_col].setIcon(null);
                             chessBoardButtons[i][j].setIcon(b_knightIcon);
@@ -228,6 +249,7 @@ public class GameConfig implements MouseListener {
                         }
                     }
                     else {
+                        System.out.println("WHITE");
                         if (e.getSource() == chessBoardButtons[w_knight_row][w_knight_col]) {
                             chessBoardButtons[w_knight_row][w_knight_col].setIcon(null);
                             chessBoardButtons[i][j].setIcon(w_knightIcon);
@@ -302,8 +324,6 @@ public class GameConfig implements MouseListener {
                             playerTurn = true;
                         }
                     }
-
-                    //////////////////////////////////////////////////////////
                     if (playerTurn) {
                         if (e.getSource() == chessBoardButtons[b_queen_row][b_queen_col]) {
                             chessBoardButtons[b_queen_row][b_queen_col].setIcon(null);
