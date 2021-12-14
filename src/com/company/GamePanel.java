@@ -39,6 +39,10 @@ public class GamePanel  extends JFrame {
     int b_queen_col = 3;
     int w_queen_row = 0;
     int w_queen_col = 3;
+    int b_king_row = 7;
+    int b_king_col = 4;
+    int w_king_row = 0;
+    int w_king_col = 4;
 
     GamePanel () {
         GameConfig gameConfig = new GameConfig(chessBoardButtons);
@@ -98,6 +102,12 @@ public class GamePanel  extends JFrame {
 
         ImageIcon w_queenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen_w.png");
         chessBoardButtons[w_queen_row][w_queen_col].setIcon(w_queenIcon);
+
+        ImageIcon b_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king.png");
+        chessBoardButtons[b_king_row][b_king_col].setIcon(b_kingIcon);
+
+        ImageIcon w_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king_w.png");
+        chessBoardButtons[w_king_row][w_king_col].setIcon(w_kingIcon);
 
         setSize(800,800);
         setResizable(false);
