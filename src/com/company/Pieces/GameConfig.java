@@ -55,33 +55,119 @@ public class GameConfig implements MouseListener {
         this.chessBoardButtons = chessBoardButtons;
     }
 
-    public boolean isValidMove(int i, int j) {
+    public boolean isKnightValidMove(int i, int j) {
         if (playerTurn) {
             int rowDelta = Math.abs((i - b_knight_row));
             int colDelta = Math.abs((j - b_knight_col));
             int rowDelta2 = Math.abs((i - b_knight_row2));
             int colDelta2 = Math.abs((j - b_knight_col2));
 
+//            int towDelta = Math.abs((i - b_tower_row));
+//            int tolDelta = Math.abs((j - b_tower_col));
+//            int towDelta2 = Math.abs((i - b_tower_row2));
+//            int tolDelta2 = Math.abs((j - b_tower_col2));
+
+//            int bowDelta = Math.abs((i - b_bishop_row));
+//            int bolDelta = Math.abs((j - b_bishop_col));
+//            int bowDelta2 = Math.abs((i - b_bishop_row2));
+//            int bolDelta2 = Math.abs((j - b_bishop_col2));
+
+//            for (int x = 0 ; x <= 7 ; ++x){
+//                if (bowDelta == x && (bolDelta == 1 || bolDelta == 2 || bolDelta == 3 || bolDelta == 4 || bolDelta == 5 || bolDelta == 6)){
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++x){
+//                if (bowDelta2 == x && (bolDelta2 == 1 || bolDelta2 == 2 || bolDelta2 == 3 || bolDelta2 == 4 || bolDelta2 == 5 || bolDelta2 == 6)){
+//                    return true;
+//                }
+//            }
+
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (towDelta == x && tolDelta == 0) {
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (tolDelta == x && towDelta == 0) {
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (towDelta2 == x && tolDelta2 == 0) {
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (tolDelta2 == x && towDelta2 == 0) {
+//                    return true;
+//                }
+//            }
+
+            return ((rowDelta == 1) && (colDelta == 2)) || ((rowDelta2 == 1) && (colDelta2 == 2)) || (colDelta == 1) && (rowDelta == 2) || (colDelta2 == 1) && (rowDelta2 == 2);
+
+        } else {
+                    int rowDelta3 = Math.abs(i - w_knight_row);
+                    int colDelta3 = Math.abs(j - w_knight_col);
+                    int rowDelta4 = Math.abs(i - w_knight_row2);
+                    int colDelta4 = Math.abs(j - w_knight_col2);
+
+//                    int towDelta3 = Math.abs(i - w_tower_row);
+//                    int tolDelta3 = Math.abs(j - w_tower_col);
+//                    int towDelta4 = Math.abs(i - w_tower_row2);
+//                    int tolDelta4 = Math.abs(j - w_tower_col2);
+
+//                    int bowDelta3 = Math.abs(i - w_bishop_row);
+//                    int bolDelta3 = Math.abs(j - w_bishop_col);
+//                    int bowDelta4 = Math.abs(i - w_bishop_row2);
+//                    int bolDelta4 = Math.abs(j - w_bishop_col2);
+
+//            for (int x = 0 ; x <= 7 ; ++x){
+//                if (bowDelta3 == x && (bolDelta3 == 1 || bolDelta3 == 2 || bolDelta3 == 3 || bolDelta3 == 4 || bolDelta3 == 5 || bolDelta3 == 6)){
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++x){
+//                if (bowDelta4 == x && (bolDelta4 == 1 || bolDelta4 == 2 || bolDelta4 == 3 || bolDelta4 == 4 || bolDelta4 == 5 || bolDelta4 == 6)){
+//                    return true;
+//                }
+//            }
+//
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (towDelta3 == x && tolDelta3 == 0) {
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (tolDelta3 == x && towDelta3 == 0) {
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (towDelta4 == x && tolDelta4 == 0) {
+//                    return true;
+//                }
+//            }
+//            for (int x = 0 ; x <= 7 ; ++ x) {
+//                if (tolDelta4 == x && towDelta4 == 0) {
+//                    return true;
+//                }
+//            }
+
+                    if ((rowDelta3 == 1) && (colDelta3 == 2) || (rowDelta4 == 1) && (colDelta4 == 2)) {
+                        return true;
+                    }
+                    return ((colDelta3 == 1) && (rowDelta3 == 2) || (colDelta4 == 1) && (rowDelta4 == 2));
+                }
+    }
+
+    public boolean isRookValidMove (int i, int j) {
+        if (playerTurn){
+
             int towDelta = Math.abs((i - b_tower_row));
             int tolDelta = Math.abs((j - b_tower_col));
             int towDelta2 = Math.abs((i - b_tower_row2));
             int tolDelta2 = Math.abs((j - b_tower_col2));
-
-            int bowDelta = Math.abs((i - b_bishop_row));
-            int bolDelta = Math.abs((j - b_bishop_col));
-            int bowDelta2 = Math.abs((i - b_bishop_row2));
-            int bolDelta2 = Math.abs((j - b_bishop_col2));
-
-            for (int x = 0 ; x <= 7 ; ++x){
-                if (bowDelta == x && (bolDelta == 1 || bolDelta == 2 || bolDelta == 3 || bolDelta == 4 || bolDelta == 5 || bolDelta == 6)){
-                    return true;
-                }
-            }
-            for (int x = 0 ; x <= 7 ; ++x){
-                if (bowDelta2 == x && (bolDelta2 == 1 || bolDelta2 == 2 || bolDelta2 == 3 || bolDelta2 == 4 || bolDelta2 == 5 || bolDelta2 == 6)){
-                    return true;
-                }
-            }
 
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta == x && tolDelta == 0) {
@@ -104,34 +190,11 @@ public class GameConfig implements MouseListener {
                 }
             }
 
-            return ((rowDelta == 1) && (colDelta == 2)) || ((rowDelta2 == 1) && (colDelta2 == 2)) || (colDelta == 1) && (rowDelta == 2) || (colDelta2 == 1) && (rowDelta2 == 2);
-
         } else {
-                    int rowDelta3 = Math.abs(i - w_knight_row);
-                    int colDelta3 = Math.abs(j - w_knight_col);
-                    int rowDelta4 = Math.abs(i - w_knight_row2);
-                    int colDelta4 = Math.abs(j - w_knight_col2);
-
-                    int towDelta3 = Math.abs(i - w_tower_row);
-                    int tolDelta3 = Math.abs(j - w_tower_col);
-                    int towDelta4 = Math.abs(i - w_tower_row2);
-                    int tolDelta4 = Math.abs(j - w_tower_col2);
-
-                    int bowDelta3 = Math.abs(i - w_bishop_row);
-                    int bolDelta3 = Math.abs(j - w_bishop_col);
-                    int bowDelta4 = Math.abs(i - w_bishop_row2);
-                    int bolDelta4 = Math.abs(j - w_bishop_col2);
-
-            for (int x = 0 ; x <= 7 ; ++x){
-                if (bowDelta3 == x && (bolDelta3 == 1 || bolDelta3 == 2 || bolDelta3 == 3 || bolDelta3 == 4 || bolDelta3 == 5 || bolDelta3 == 6)){
-                    return true;
-                }
-            }
-            for (int x = 0 ; x <= 7 ; ++x){
-                if (bowDelta4 == x && (bolDelta4 == 1 || bolDelta4 == 2 || bolDelta4 == 3 || bolDelta4 == 4 || bolDelta4 == 5 || bolDelta4 == 6)){
-                    return true;
-                }
-            }
+            int towDelta3 = Math.abs(i - w_tower_row);
+            int tolDelta3 = Math.abs(j - w_tower_col);
+            int towDelta4 = Math.abs(i - w_tower_row2);
+            int tolDelta4 = Math.abs(j - w_tower_col2);
 
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta3 == x && tolDelta3 == 0) {
@@ -153,12 +216,8 @@ public class GameConfig implements MouseListener {
                     return true;
                 }
             }
-
-                    if ((rowDelta3 == 1) && (colDelta3 == 2) || (rowDelta4 == 1) && (colDelta4 == 2)) {
-                        return true;
-                    }
-                    return ((colDelta3 == 1) && (rowDelta3 == 2) || (colDelta4 == 1) && (rowDelta4 == 2));
-                }
+        }
+        return false;
     }
 
     @Override
@@ -169,7 +228,7 @@ public class GameConfig implements MouseListener {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (source == chessBoardButtons[i][j]) {
-                    if (!isValidMove(i, j)) {
+                    if (!isKnightValidMove(i, j) && (!isRookValidMove(i, j))) {
                         return;
                     }
                     if (playerTurn) {
