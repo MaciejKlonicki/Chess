@@ -66,9 +66,51 @@ public class GameConfig implements MouseListener {
     private final ImageIcon b_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
     private int b_pawn_row = 6;
     private int b_pawn_col = 0;
+    private final ImageIcon b_pawnIcon1 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row1 = 6;
+    private int b_pawn_col1 = 1;
+    private final ImageIcon b_pawnIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row2 = 6;
+    private int b_pawn_col2 = 2;
+    private final ImageIcon b_pawnIcon3 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row3 = 6;
+    private int b_pawn_col3 = 3;
+    private final ImageIcon b_pawnIcon4 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row4 = 6;
+    private int b_pawn_col4 = 4;
+    private final ImageIcon b_pawnIcon5 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row5 = 6;
+    private int b_pawn_col5 = 5;
+    private final ImageIcon b_pawnIcon6 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row6 = 6;
+    private int b_pawn_col6 = 6;
+    private final ImageIcon b_pawnIcon7 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row7 = 6;
+    private int b_pawn_col7 = 7;
     private final ImageIcon w_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
     private int w_pawn_row = 1;
     private int w_pawn_col = 0;
+    private final ImageIcon w_pawnIcon1 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row1 = 1;
+    private int w_pawn_col1 = 1;
+    private final ImageIcon w_pawnIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row2 = 1;
+    private int w_pawn_col2 = 2;
+    private final ImageIcon w_pawnIcon3 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row3 = 1;
+    private int w_pawn_col3 = 3;
+    private final ImageIcon w_pawnIcon4 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row4 = 1;
+    private int w_pawn_col4 = 4;
+    private final ImageIcon w_pawnIcon5 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row5 = 1;
+    private int w_pawn_col5 = 5;
+    private final ImageIcon w_pawnIcon6 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row6 = 1;
+    private int w_pawn_col6 = 6;
+    private final ImageIcon w_pawnIcon7 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row7 = 1;
+    private int w_pawn_col7 = 7;
 
 
     private final JButton [][] chessBoardButtons;
@@ -363,6 +405,108 @@ public class GameConfig implements MouseListener {
                             chessBoardButtons[i][j].setIcon(w_kingIcon);
                             w_king_row = i;
                             w_king_col = j;
+                            playerTurn = true;
+                        }
+                    }
+                    if (playerTurn) {
+                        if (e.getSource() == chessBoardButtons[b_pawn_row][b_pawn_col]) {
+                            chessBoardButtons[b_pawn_row][b_pawn_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon);
+                            b_pawn_row = i;
+                            b_pawn_col = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_pawn_row1][b_pawn_col1]) {
+                            chessBoardButtons[b_pawn_row1][b_pawn_col1].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon1);
+                            b_pawn_row1 = i;
+                            b_pawn_col1 = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_pawn_row2][b_pawn_col2]) {
+                            chessBoardButtons[b_pawn_row2][b_pawn_col2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon2);
+                            b_pawn_row2 = i;
+                            b_pawn_col2 = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_pawn_row3][b_pawn_col3]) {
+                            chessBoardButtons[b_pawn_row3][b_pawn_col3].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon3);
+                            b_pawn_row3 = i;
+                            b_pawn_col3 = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_pawn_row4][b_pawn_col4]) {
+                            chessBoardButtons[b_pawn_row4][b_pawn_col4].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon4);
+                            b_pawn_row4 = i;
+                            b_pawn_col4 = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_pawn_row5][b_pawn_col5]) {
+                            chessBoardButtons[b_pawn_row5][b_pawn_col5].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon5);
+                            b_pawn_row5 = i;
+                            b_pawn_col5 = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_pawn_row6][b_pawn_col6]) {
+                            chessBoardButtons[b_pawn_row6][b_pawn_col6].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon6);
+                            b_pawn_row6 = i;
+                            b_pawn_col6 = j;
+                            playerTurn = false;
+                        } else if (e.getSource() == chessBoardButtons[b_pawn_row7][b_pawn_col7]) {
+                            chessBoardButtons[b_pawn_row7][b_pawn_col7].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_pawnIcon7);
+                            b_pawn_row7 = i;
+                            b_pawn_col7 = j;
+                            playerTurn = false;
+                        }
+                    }
+                    else {
+                        if (e.getSource() == chessBoardButtons[w_pawn_row][w_pawn_col]) {
+                            chessBoardButtons[w_pawn_row][w_pawn_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon);
+                            w_pawn_row = i;
+                            w_pawn_col = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_pawn_row1][w_pawn_col1]) {
+                            chessBoardButtons[w_pawn_row1][w_pawn_col1].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon1);
+                            w_pawn_row1 = i;
+                            w_pawn_col1 = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_pawn_row2][w_pawn_col2]) {
+                            chessBoardButtons[w_pawn_row2][w_pawn_col2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon2);
+                            w_pawn_row2 = i;
+                            w_pawn_col2 = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_pawn_row3][w_pawn_col3]) {
+                            chessBoardButtons[w_pawn_row3][w_pawn_col3].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon3);
+                            w_pawn_row3 = i;
+                            w_pawn_col3 = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_pawn_row4][w_pawn_col4]) {
+                            chessBoardButtons[w_pawn_row4][w_pawn_col4].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon4);
+                            w_pawn_row4 = i;
+                            w_pawn_col4 = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_pawn_row5][w_pawn_col5]) {
+                            chessBoardButtons[w_pawn_row5][w_pawn_col5].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon5);
+                            w_pawn_row5 = i;
+                            w_pawn_col5 = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_pawn_row6][w_pawn_col6]) {
+                            chessBoardButtons[w_pawn_row6][w_pawn_col6].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon6);
+                            w_pawn_row6 = i;
+                            w_pawn_col6 = j;
+                            playerTurn = true;
+                        } else if (e.getSource() == chessBoardButtons[w_pawn_row7][w_pawn_col7]) {
+                            chessBoardButtons[w_pawn_row7][w_pawn_col7].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_pawnIcon7);
+                            w_pawn_row7 = i;
+                            w_pawn_col7 = j;
                             playerTurn = true;
                         }
                     }
