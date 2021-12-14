@@ -342,6 +342,24 @@ public class GameConfig implements MouseListener {
                             playerTurn = true;
                         }
                     }
+                    if (playerTurn) {
+                        if (e.getSource() == chessBoardButtons[b_king_row][b_king_col]) {
+                            chessBoardButtons[b_king_row][b_king_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_kingIcon);
+                            b_king_row = i;
+                            b_king_col = j;
+                            playerTurn = false;
+                        }
+                    }
+                    else {
+                        if (e.getSource() == chessBoardButtons[w_king_row][w_king_col]) {
+                            chessBoardButtons[w_king_row][w_king_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_kingIcon);
+                            w_king_row = i;
+                            w_king_col = j;
+                            playerTurn = true;
+                        }
+                    }
                     return;
                 }
             }
