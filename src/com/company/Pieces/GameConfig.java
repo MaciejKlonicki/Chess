@@ -49,10 +49,32 @@ public class GameConfig implements MouseListener {
     private int b_bishop_row2 = 7;
     private int b_bishop_col2 = 5;
 
+    private final ImageIcon b_queenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen.png");
+    private int b_queen_row = 7;
+    private int b_queen_col = 3;
+    private final ImageIcon w_queenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen_w.png");
+    private int w_queen_row = 0;
+    private int w_queen_col = 3;
+
     private final JButton [][] chessBoardButtons;
 
     public GameConfig(JButton [][] chessBoardButtons) {
         this.chessBoardButtons = chessBoardButtons;
+    }
+
+    public boolean isQueenValidMove (int i, int j) {
+        if (playerTurn){
+            int qowDelta = Math.abs((i - b_queen_row));
+            int qolDelta = Math.abs((j - b_queen_col));
+
+
+        } else {
+            int qowDelta2 = Math.abs((i - w_queen_row));
+            int qolDelta2 = Math.abs((j - w_queen_col));
+
+            
+        }
+        return false;
     }
 
     public boolean isKnightValidMove(int i, int j) {
