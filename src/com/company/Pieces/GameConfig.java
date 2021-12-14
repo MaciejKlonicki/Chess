@@ -63,6 +63,11 @@ public class GameConfig implements MouseListener {
     private int w_king_row = 0;
     private int w_king_col = 4;
 
+    private final ImageIcon b_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int b_pawn_row = 6;
+    private final ImageIcon w_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int w_pawn_row = 1;
+
     private final JButton [][] chessBoardButtons;
 
     public GameConfig(JButton [][] chessBoardButtons) {
@@ -349,6 +354,26 @@ public class GameConfig implements MouseListener {
                             b_king_row = i;
                             b_king_col = j;
                             playerTurn = false;
+                        }
+                    }
+                    else {
+                        if (e.getSource() == chessBoardButtons[w_king_row][w_king_col]) {
+                            chessBoardButtons[w_king_row][w_king_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_kingIcon);
+                            w_king_row = i;
+                            w_king_col = j;
+                            playerTurn = true;
+                        }
+                    }
+                    if (playerTurn) {
+                        for (int x = 0; x < 8 ; x ++) {
+                            if (e.getSource() == chessBoardButtons[b_pawn_row][x]) {
+                                chessBoardButtons[b_king_row][b_king_col].setIcon(null);
+                                chessBoardButtons[i][j].setIcon(b_kingIcon);
+                                b_king_row = i;
+                                b_king_col = j;
+                                playerTurn = false;
+                            }
                         }
                     }
                     else {
