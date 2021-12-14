@@ -43,12 +43,15 @@ public class GamePanel  extends JFrame {
     int b_king_col = 4;
     int w_king_row = 0;
     int w_king_col = 4;
+    int w_pawn_row = 1;
+    int b_pawn_row = 6;
 
     GamePanel () {
         GameConfig gameConfig = new GameConfig(chessBoardButtons);
 
         Container container = getContentPane();
         container.setLayout(new GridLayout(8,8));
+
 
         // Chessboard
         for (int i = 0 ; i < 8 ; i++) {
@@ -61,6 +64,16 @@ public class GamePanel  extends JFrame {
                 chessBoardButtons[i][j].addMouseListener(gameConfig);
             }
         }
+
+        for (int x = 0; x < 8 ; x ++){
+            ImageIcon w_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+            chessBoardButtons[w_pawn_row][x].setIcon(w_pawnIcon);
+        }
+        for (int x = 0; x < 8 ; x ++){
+            ImageIcon b_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+            chessBoardButtons[b_pawn_row][x].setIcon(b_pawnIcon);
+        }
+
         ImageIcon w_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
         chessBoardButtons[w_knight_row][w_knight_col].setIcon(w_knightIcon);
 
