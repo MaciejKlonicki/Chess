@@ -62,21 +62,6 @@ public class GameConfig implements MouseListener {
         this.chessBoardButtons = chessBoardButtons;
     }
 
-    public boolean isQueenValidMove (int i, int j) {
-        if (playerTurn){
-            int qowDelta = Math.abs((i - b_queen_row));
-            int qolDelta = Math.abs((j - b_queen_col));
-
-
-        } else {
-            int qowDelta2 = Math.abs((i - w_queen_row));
-            int qolDelta2 = Math.abs((j - w_queen_col));
-
-            
-        }
-        return false;
-    }
-
     public boolean isKnightValidMove(int i, int j) {
         if (playerTurn) {
             int rowDelta = Math.abs((i - b_knight_row));
@@ -94,6 +79,31 @@ public class GameConfig implements MouseListener {
 
             return ((rowDelta3 == 1) && (colDelta3 == 2)) || ((rowDelta4 == 1) && (colDelta4 == 2)) || ((colDelta3 == 1) && (rowDelta3 == 2)) || ((colDelta4 == 1) && (rowDelta4 == 2));
                 }
+    }
+
+    public boolean isQueenValidMove (int i, int j) {
+        if (playerTurn){
+            int qowDelta = Math.abs((i - b_queen_row));
+            int qolDelta = Math.abs((j - b_queen_col));
+
+            for (int x = 0; x <= 7; ++ x) {
+                if ((qowDelta == x && qolDelta == 0) || (qowDelta == x && qolDelta == 1)){
+                    return true;
+                }
+            }
+
+        } else {
+            int qowDelta2 = Math.abs((i - w_queen_row));
+            int qolDelta2 = Math.abs((j - w_queen_col));
+
+            for (int x = 0; x <= 7; ++ x) {
+                if ((qowDelta2 == x && qolDelta2 == 0) || (qowDelta2 == x && qolDelta2 == 1)){
+                    return true;
+                }
+            }
+
+        }
+        return false;
     }
 
     public boolean isRookValidMove (int i, int j) {
@@ -199,7 +209,7 @@ public class GameConfig implements MouseListener {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (source == chessBoardButtons[i][j]) {
-                    if (!isKnightValidMove(i, j) && (!isRookValidMove(i, j)) && (!isBishopValidMove(i, j))) {
+                    if (!isKnightValidMove(i, j) && (!isRookValidMove(i, j)) && (!isBishopValidMove(i, j)) && (!isQueenValidMove(i, j))) {
                         return;
                     }
                     if (playerTurn) {
@@ -289,6 +299,26 @@ public class GameConfig implements MouseListener {
                             chessBoardButtons[i][j].setIcon(w_bishopIcon2);
                             w_bishop_row2 = i;
                             w_bishop_col2 = j;
+                            playerTurn = true;
+                        }
+                    }
+
+                    //////////////////////////////////////////////////////////
+                    if (playerTurn) {
+                        if (e.getSource() == chessBoardButtons[b_queen_row][b_queen_col]) {
+                            chessBoardButtons[b_queen_row][b_queen_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(b_queenIcon);
+                            b_queen_row = i;
+                            b_queen_col = j;
+                            playerTurn = false;
+                        }
+                    }
+                    else {
+                        if (e.getSource() == chessBoardButtons[w_queen_row][w_queen_col]) {
+                            chessBoardButtons[w_queen_row][w_queen_col].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(w_queenIcon);
+                            w_queen_row = i;
+                            w_queen_col = j;
                             playerTurn = true;
                         }
                     }
