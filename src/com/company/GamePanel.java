@@ -65,15 +65,19 @@ public class GamePanel  extends JFrame {
             }
         }
 
+        // pawns white
         for (int x = 0; x < 8 ; x ++){
             ImageIcon w_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
             chessBoardButtons[w_pawn_row][x].setIcon(w_pawnIcon);
         }
+
+        // pawns black
         for (int x = 0; x < 8 ; x ++){
             ImageIcon b_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
             chessBoardButtons[b_pawn_row][x].setIcon(b_pawnIcon);
         }
 
+        //icons for each figure
         ImageIcon w_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
         chessBoardButtons[w_knight_row][w_knight_col].setIcon(w_knightIcon);
 
@@ -122,6 +126,7 @@ public class GamePanel  extends JFrame {
         ImageIcon w_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king_w.png");
         chessBoardButtons[w_king_row][w_king_col].setIcon(w_kingIcon);
 
+        //window
         setSize(800,800);
         setResizable(false);
         setLocationRelativeTo(null);

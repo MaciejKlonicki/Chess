@@ -5,8 +5,13 @@ import java.awt.event.*;
 
 public class GameConfig implements MouseListener {
 
+
     Object source;
+    //which player moves now
     public boolean playerTurn;
+
+    // icon for each figure
+
     private final ImageIcon w_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
     private int w_knight_row = 0;
     private int w_knight_col = 1;
@@ -115,10 +120,12 @@ public class GameConfig implements MouseListener {
 
     private final JButton [][] chessBoardButtons;
 
+    // constructor
     public GameConfig(JButton [][] chessBoardButtons) {
         this.chessBoardButtons = chessBoardButtons;
     }
 
+    //check knight valid move
     public boolean isKnightValidMove(int i, int j) {
         if (playerTurn) {
             int rowDelta = Math.abs((i - b_knight_row));
@@ -138,6 +145,7 @@ public class GameConfig implements MouseListener {
                 }
     }
 
+    //check King valid move
     public boolean isKingValidMove (int i, int j) {
         if (playerTurn){
             int kowDelta = Math.abs((i - b_king_row));
@@ -151,6 +159,7 @@ public class GameConfig implements MouseListener {
         }
     }
 
+    //check Queenvalid move
     public boolean isQueenValidMove (int i, int j) {
         if (playerTurn){
             int qowDelta = Math.abs((i - b_queen_row));
@@ -176,6 +185,7 @@ public class GameConfig implements MouseListener {
         return false;
     }
 
+    //check rook valid move
     public boolean isRookValidMove (int i, int j) {
         if (playerTurn){
             int towDelta = Math.abs((i - b_tower_row));
@@ -234,6 +244,7 @@ public class GameConfig implements MouseListener {
         return false;
     }
 
+    //check bishop valid move
     public boolean isBishopValidMove (int i, int j) {
         if (playerTurn) {
             int bowDelta = Math.abs((i - b_bishop_row));
