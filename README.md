@@ -1,2 +1,2 @@
 # Chess
-Chess game
+Chess game created in Java SWING.
