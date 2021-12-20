@@ -1,3 +1,2 @@
 # Chess
-# MyGame
 Chess game
