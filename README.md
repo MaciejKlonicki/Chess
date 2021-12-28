@@ -20,3 +20,5 @@ Chess game created for 2 players - no AI.
 
 
 Game has not been finished - there is couple of things to do yet.
+
+#MK#
