@@ -3,7 +3,7 @@ Chess game created in Java SWING.
 
 # Features
 Chess game created for 2 players - no AI.
-- Turns
+- Turns,
 - Valid moves for each  
 
 # Screenshots
