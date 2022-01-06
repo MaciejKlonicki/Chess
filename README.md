@@ -7,6 +7,7 @@ Chess game created for 2 players - no AI.
 - Valid moves for each,
 - Possibility of capturing pawns,
 - Removing figurates from the board
+- Winning possibility
 
 # Screenshots
 
