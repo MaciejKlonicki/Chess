@@ -1,4 +1,4 @@
-# Chess
+# Chess GAME
 Chess game created in Java SWING.
 
 # Features
