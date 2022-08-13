@@ -17,11 +17,3 @@ Chess game created for 2 players - no AI.
 
 ![image](https://user-images.githubusercontent.com/82573905/146781875-548b500d-db7e-4d61-9a7d-55c513bab662.png)
 
-
-
-
-
-
-Game has not been finished - there is couple of things to do yet.
-
-#MK#
