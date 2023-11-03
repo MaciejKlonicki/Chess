@@ -4,118 +4,113 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class GameConfig implements MouseListener {
-
-
     Object source;
-    //which player moves now
-    public boolean playerTurn;
+    private boolean playerTurn;
 
-    // icon for each figure
+    private final ImageIcon wKnightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
+    private int wKnightRow = 0;
+    private int wKnightCol = 1;
+    private final ImageIcon wKnightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
+    private  int wKnightRow2 = 0;
+    private  int wKnightCol2 = 6;
 
-    private final ImageIcon w_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
-    private int w_knight_row = 0;
-    private int w_knight_col = 1;
-    private final ImageIcon w_knightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
-    private  int w_knight_row2 = 0;
-    private  int w_knight_col2 = 6;
+    private final ImageIcon bKnightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
+    private int bKnightRow = 7;
+    private int bKnightCol = 1;
+    private final ImageIcon bKnightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
+    private int bKnightRow2 = 7;
+    private int bKnightCol2 = 6;
 
-    private final ImageIcon b_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
-    private int b_knight_row = 7;
-    private int b_knight_col = 1;
-    private final ImageIcon b_knightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
-    private int b_knight_row2 = 7;
-    private int b_knight_col2 = 6;
+    private final ImageIcon wTowerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+    private int wTowerRow = 0;
+    private int wTowerCol = 0;
+    private final ImageIcon wTowerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+    private int wTowerRow2 = 0;
+    private int wTowerCol2 = 7;
 
-    private final ImageIcon w_towerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
-    private int w_tower_row = 0;
-    private int w_tower_col = 0;
-    private final ImageIcon w_towerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
-    private int w_tower_row2 = 0;
-    private int w_tower_col2 = 7;
+    private final ImageIcon bTowerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
+    private int bTowerRow = 7;
+    private int bTowerCol = 0;
+    private final ImageIcon bTowerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
+    private int bTowerRow2 = 7;
+    private int bTowerCol2 = 7;
 
-    private final ImageIcon b_towerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
-    private int b_tower_row = 7;
-    private int b_tower_col = 0;
-    private final ImageIcon b_towerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
-    private int b_tower_row2 = 7;
-    private int b_tower_col2 = 7;
+    private final ImageIcon wBishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
+    private int wBishopRow = 0;
+    private int wBishopCol = 2;
+    private final ImageIcon wBishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
+    private int wBishopRow2 = 0;
+    private int wBishopCol2 = 5;
 
-    private final ImageIcon w_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
-    private int w_bishop_row = 0;
-    private int w_bishop_col = 2;
-    private final ImageIcon w_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
-    private int w_bishop_row2 = 0;
-    private int w_bishop_col2 = 5;
+    private final ImageIcon bBishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+    private int bBishopRow = 7;
+    private int bBishopCol = 2;
+    private final ImageIcon bBishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+    private int bBishopRow2 = 7;
+    private int bBishopCol2 = 5;
 
-    private final ImageIcon b_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
-    private int b_bishop_row = 7;
-    private int b_bishop_col = 2;
-    private final ImageIcon b_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
-    private int b_bishop_row2 = 7;
-    private int b_bishop_col2 = 5;
+    private final ImageIcon bQueenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen.png");
+    private int bQueenRow = 7;
+    private int bQueenCol = 3;
+    private final ImageIcon wQueenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen_w.png");
+    private int wQueenRow = 0;
+    private int wQueenCol = 3;
 
-    private final ImageIcon b_queenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen.png");
-    private int b_queen_row = 7;
-    private int b_queen_col = 3;
-    private final ImageIcon w_queenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen_w.png");
-    private int w_queen_row = 0;
-    private int w_queen_col = 3;
+    private final ImageIcon bKingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king.png");
+    private int bKingRow = 7;
+    private int bKingCol = 4;
+    private final ImageIcon wKingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king_w.png");
+    private int wKingRow = 0;
+    private int wKingCol = 4;
 
-    private final ImageIcon b_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king.png");
-    private int b_king_row = 7;
-    private int b_king_col = 4;
-    private final ImageIcon w_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king_w.png");
-    private int w_king_row = 0;
-    private int w_king_col = 4;
-
-    private final ImageIcon b_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row = 6;
-    private int b_pawn_col = 0;
-    private final ImageIcon b_pawnIcon1 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row1 = 6;
-    private int b_pawn_col1 = 1;
-    private final ImageIcon b_pawnIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row2 = 6;
-    private int b_pawn_col2 = 2;
-    private final ImageIcon b_pawnIcon3 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row3 = 6;
-    private int b_pawn_col3 = 3;
-    private final ImageIcon b_pawnIcon4 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row4 = 6;
-    private int b_pawn_col4 = 4;
-    private final ImageIcon b_pawnIcon5 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row5 = 6;
-    private int b_pawn_col5 = 5;
-    private final ImageIcon b_pawnIcon6 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row6 = 6;
-    private int b_pawn_col6 = 6;
-    private final ImageIcon b_pawnIcon7 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-    private int b_pawn_row7 = 6;
-    private int b_pawn_col7 = 7;
-    private final ImageIcon w_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row = 1;
-    private int w_pawn_col = 0;
-    private final ImageIcon w_pawnIcon1 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row1 = 1;
-    private int w_pawn_col1 = 1;
-    private final ImageIcon w_pawnIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row2 = 1;
-    private int w_pawn_col2 = 2;
-    private final ImageIcon w_pawnIcon3 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row3 = 1;
-    private int w_pawn_col3 = 3;
-    private final ImageIcon w_pawnIcon4 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row4 = 1;
-    private int w_pawn_col4 = 4;
-    private final ImageIcon w_pawnIcon5 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row5 = 1;
-    private int w_pawn_col5 = 5;
-    private final ImageIcon w_pawnIcon6 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row6 = 1;
-    private int w_pawn_col6 = 6;
-    private final ImageIcon w_pawnIcon7 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-    private int w_pawn_row7 = 1;
-    private int w_pawn_col7 = 7;
+    private final ImageIcon bPawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow = 6;
+    private int bPawnCol = 0;
+    private final ImageIcon bPawnIcon1 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow1 = 6;
+    private int bPawnCol1 = 1;
+    private final ImageIcon bPawnIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow2 = 6;
+    private int bPawnCol2 = 2;
+    private final ImageIcon bPawnIcon3 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow3 = 6;
+    private int bPawnCol3 = 3;
+    private final ImageIcon bPawnIcon4 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow4 = 6;
+    private int bPawnCol4 = 4;
+    private final ImageIcon bPawnIcon5 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow5 = 6;
+    private int bPawnCol5 = 5;
+    private final ImageIcon bPawnIcon6 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow6 = 6;
+    private int bPawnCol6 = 6;
+    private final ImageIcon bPawnIcon7 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+    private int bPawnRow7 = 6;
+    private int bPawnCol7 = 7;
+    private final ImageIcon wPawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow = 1;
+    private int wPawnCol = 0;
+    private final ImageIcon wPawnIcon1 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow1 = 1;
+    private int wPawnCol1 = 1;
+    private final ImageIcon wPawnIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow2 = 1;
+    private int wPawnCol2 = 2;
+    private final ImageIcon wPawnIcon3 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow3 = 1;
+    private int wPawnCol3 = 3;
+    private final ImageIcon wPawnIcon4 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow4 = 1;
+    private int wPawnCol4 = 4;
+    private final ImageIcon wPawnIcon5 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow5 = 1;
+    private int wPawnCol5 = 5;
+    private final ImageIcon wPawnIcon6 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow6 = 1;
+    private int wPawnCol6 = 6;
+    private final ImageIcon wPawnIcon7 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+    private int wPawnRow7 = 1;
+    private int wPawnCol7 = 7;
 
 
     private final JButton [][] chessBoardButtons;
@@ -128,18 +123,18 @@ public class GameConfig implements MouseListener {
     //check knight valid move
     public boolean isKnightValidMove(int i, int j) {
         if (playerTurn) {
-            int rowDelta = Math.abs((i - b_knight_row));
-            int colDelta = Math.abs((j - b_knight_col));
-            int rowDelta2 = Math.abs((i - b_knight_row2));
-            int colDelta2 = Math.abs((j - b_knight_col2));
+            int rowDelta = Math.abs((i - bKnightRow));
+            int colDelta = Math.abs((j - bKnightCol));
+            int rowDelta2 = Math.abs((i - bKnightRow2));
+            int colDelta2 = Math.abs((j - bKnightCol2));
 
             return (rowDelta == 1) && (colDelta == 2) || (rowDelta2 == 1) && (colDelta2 == 2) || (colDelta == 1) && (rowDelta == 2) || (colDelta2 == 1) && (rowDelta2 == 2);
 
         } else {
-                    int rowDelta3 = Math.abs(i - w_knight_row);
-                    int colDelta3 = Math.abs(j - w_knight_col);
-                    int rowDelta4 = Math.abs(i - w_knight_row2);
-                    int colDelta4 = Math.abs(j - w_knight_col2);
+                    int rowDelta3 = Math.abs(i - wKnightRow);
+                    int colDelta3 = Math.abs(j - wKnightCol);
+                    int rowDelta4 = Math.abs(i - wKnightRow2);
+                    int colDelta4 = Math.abs(j - wKnightCol2);
 
             return ((rowDelta3 == 1) && (colDelta3 == 2)) || ((rowDelta4 == 1) && (colDelta4 == 2)) || ((colDelta3 == 1) && (rowDelta3 == 2)) || ((colDelta4 == 1) && (rowDelta4 == 2));
                 }
@@ -148,13 +143,13 @@ public class GameConfig implements MouseListener {
     //check King valid move
     public boolean isKingValidMove (int i, int j) {
         if (playerTurn){
-            int kowDelta = Math.abs((i - b_king_row));
-            int kolDelta = Math.abs((j - b_king_col));
+            int kowDelta = Math.abs((i - bKingRow));
+            int kolDelta = Math.abs((j - bKingCol));
             return kowDelta == 1 && kolDelta == 1;
         }
         else {
-            int kowDelta2 = Math.abs((i - w_king_row));
-            int kolDelta2 = Math.abs((j - w_king_col));
+            int kowDelta2 = Math.abs((i - wKingRow));
+            int kolDelta2 = Math.abs((j - wKingCol));
             return kowDelta2 == 1 && kolDelta2 == 1;
         }
     }
@@ -162,8 +157,8 @@ public class GameConfig implements MouseListener {
     //check Queenvalid move
     public boolean isQueenValidMove (int i, int j) {
         if (playerTurn){
-            int qowDelta = Math.abs((i - b_queen_row));
-            int qolDelta = Math.abs((j - b_queen_col));
+            int qowDelta = Math.abs((i - bQueenRow));
+            int qolDelta = Math.abs((j - bQueenCol));
 
             for (int x = 0; x <= 7; ++ x) {
                 if ((qowDelta == x && qolDelta == 0) || (qowDelta == x && qolDelta == 1)){
@@ -172,8 +167,8 @@ public class GameConfig implements MouseListener {
             }
 
         } else {
-            int qowDelta2 = Math.abs((i - w_queen_row));
-            int qolDelta2 = Math.abs((j - w_queen_col));
+            int qowDelta2 = Math.abs((i - wQueenRow));
+            int qolDelta2 = Math.abs((j - wQueenCol));
 
             for (int x = 0; x <= 7; ++ x) {
                 if ((qowDelta2 == x && qolDelta2 == 0) || (qowDelta2 == x && qolDelta2 == 1)){
@@ -188,10 +183,10 @@ public class GameConfig implements MouseListener {
     //check rook valid move
     public boolean isRookValidMove (int i, int j) {
         if (playerTurn){
-            int towDelta = Math.abs((i - b_tower_row));
-            int tolDelta = Math.abs((j - b_tower_col));
-            int towDelta2 = Math.abs((i - b_tower_row2));
-            int tolDelta2 = Math.abs((j - b_tower_col2));
+            int towDelta = Math.abs((i - bTowerRow));
+            int tolDelta = Math.abs((j - bTowerCol));
+            int towDelta2 = Math.abs((i - bTowerRow2));
+            int tolDelta2 = Math.abs((j - bTowerCol2));
 
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta == x && tolDelta == 0) {
@@ -215,10 +210,10 @@ public class GameConfig implements MouseListener {
             }
 
         } else {
-            int towDelta3 = Math.abs(i - w_tower_row);
-            int tolDelta3 = Math.abs(j - w_tower_col);
-            int towDelta4 = Math.abs(i - w_tower_row2);
-            int tolDelta4 = Math.abs(j - w_tower_col2);
+            int towDelta3 = Math.abs(i - wTowerRow);
+            int tolDelta3 = Math.abs(j - wTowerCol);
+            int towDelta4 = Math.abs(i - wTowerRow2);
+            int tolDelta4 = Math.abs(j - wTowerCol2);
 
             for (int x = 0 ; x <= 7 ; ++ x) {
                 if (towDelta3 == x && tolDelta3 == 0) {
@@ -247,10 +242,10 @@ public class GameConfig implements MouseListener {
     //check bishop valid move
     public boolean isBishopValidMove (int i, int j) {
         if (playerTurn) {
-            int bowDelta = Math.abs((i - b_bishop_row));
-            int bolDelta = Math.abs((j - b_bishop_col));
-            int bowDelta2 = Math.abs((i - b_bishop_row2));
-            int bolDelta2 = Math.abs((j - b_bishop_col2));
+            int bowDelta = Math.abs((i - bBishopRow));
+            int bolDelta = Math.abs((j - bBishopCol));
+            int bowDelta2 = Math.abs((i - bBishopRow2));
+            int bolDelta2 = Math.abs((j - bBishopCol2));
 
             for (int x = 0 ; x <= 7 ; ++x){
                 if (bowDelta == x && (bolDelta == 1)){
@@ -263,10 +258,10 @@ public class GameConfig implements MouseListener {
                 }
             }
         } else {
-            int bowDelta3 = Math.abs(i - w_bishop_row);
-            int bolDelta3 = Math.abs(j - w_bishop_col);
-            int bowDelta4 = Math.abs(i - w_bishop_row2);
-            int bolDelta4 = Math.abs(j - w_bishop_col2);
+            int bowDelta3 = Math.abs(i - wBishopRow);
+            int bolDelta3 = Math.abs(j - wBishopCol);
+            int bowDelta4 = Math.abs(i - wBishopRow2);
+            int bolDelta4 = Math.abs(j - wBishopCol2);
 
             for (int x = 0 ; x <= 7 ; ++x){
                 if (bowDelta3 == x && (bolDelta3 == 1)){
@@ -294,230 +289,230 @@ public class GameConfig implements MouseListener {
                         return;
                     }
                     if (playerTurn) {
-                        if (e.getSource() == chessBoardButtons[b_knight_row][b_knight_col]) {
-                            chessBoardButtons[b_knight_row][b_knight_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_knightIcon);
-                            b_knight_row = i;
-                            b_knight_col = j;
+                        if (e.getSource() == chessBoardButtons[bKnightRow][bKnightCol]) {
+                            chessBoardButtons[bKnightRow][bKnightCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bKnightIcon);
+                            bKnightRow = i;
+                            bKnightCol = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_knight_row2][b_knight_col2]) {
-                            chessBoardButtons[b_knight_row2][b_knight_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_knightIcon2);
-                            b_knight_row2 = i;
-                            b_knight_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[bKnightRow2][bKnightCol2]) {
+                            chessBoardButtons[bKnightRow2][bKnightCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bKnightIcon2);
+                            bKnightRow2 = i;
+                            bKnightCol2 = j;
                             playerTurn = false;
                         }
                     }
                     else {
-                        if (e.getSource() == chessBoardButtons[w_knight_row][w_knight_col]) {
-                            chessBoardButtons[w_knight_row][w_knight_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_knightIcon);
-                            w_knight_row = i;
-                            w_knight_col = j;
+                        if (e.getSource() == chessBoardButtons[wKnightRow][wKnightCol]) {
+                            chessBoardButtons[wKnightRow][wKnightCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wKnightIcon);
+                            wKnightRow = i;
+                            wKnightCol = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_knight_row2][w_knight_col2]) {
-                            chessBoardButtons[w_knight_row2][w_knight_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_knightIcon2);
-                            w_knight_row2 = i;
-                            w_knight_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[wKnightRow2][wKnightCol2]) {
+                            chessBoardButtons[wKnightRow2][wKnightCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wKnightIcon2);
+                            wKnightRow2 = i;
+                            wKnightCol2 = j;
                             playerTurn = true;
                         }
                     }
                     if (playerTurn) {
-                        if (e.getSource() == chessBoardButtons[b_tower_row][b_tower_col]) {
-                            chessBoardButtons[b_tower_row][b_tower_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_towerIcon);
-                            b_tower_row = i;
-                            b_tower_col = j;
+                        if (e.getSource() == chessBoardButtons[bTowerRow][bTowerCol]) {
+                            chessBoardButtons[bTowerRow][bTowerCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bTowerIcon);
+                            bTowerRow = i;
+                            bTowerCol = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_tower_row2][b_tower_col2]) {
-                            chessBoardButtons[b_tower_row2][b_tower_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_towerIcon2);
-                            b_tower_row2 = i;
-                            b_tower_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[bTowerRow2][bTowerCol2]) {
+                            chessBoardButtons[bTowerRow2][bTowerCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bTowerIcon2);
+                            bTowerRow2 = i;
+                            bTowerCol2 = j;
                             playerTurn = false;
                         }
                     }
                     else {
-                        if (e.getSource() == chessBoardButtons[w_tower_row][w_tower_col]) {
-                            chessBoardButtons[w_tower_row][w_tower_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_towerIcon);
-                            w_tower_row = i;
-                            w_tower_col = j;
+                        if (e.getSource() == chessBoardButtons[wTowerRow][wTowerCol]) {
+                            chessBoardButtons[wTowerRow][wTowerCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wTowerIcon);
+                            wTowerRow = i;
+                            wTowerCol = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_tower_row2][w_tower_col2]) {
-                            chessBoardButtons[w_tower_row2][w_tower_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_towerIcon2);
-                            w_tower_row2 = i;
-                            w_tower_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[wTowerRow2][wTowerCol2]) {
+                            chessBoardButtons[wTowerRow2][wTowerCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wTowerIcon2);
+                            wTowerRow2 = i;
+                            wTowerCol2 = j;
                             playerTurn = true;
                         }
                     }
                     if (playerTurn) {
-                        if (e.getSource() == chessBoardButtons[b_bishop_row][b_bishop_col]) {
-                            chessBoardButtons[b_bishop_row][b_bishop_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_bishopIcon);
-                            b_bishop_row = i;
-                            b_bishop_col = j;
+                        if (e.getSource() == chessBoardButtons[bBishopRow][bBishopCol]) {
+                            chessBoardButtons[bBishopRow][bBishopCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bBishopIcon);
+                            bBishopRow = i;
+                            bBishopCol = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_bishop_row2][b_bishop_col2]) {
-                            chessBoardButtons[b_bishop_row2][b_bishop_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_bishopIcon2);
-                            b_bishop_row2 = i;
-                            b_bishop_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[bBishopRow2][bBishopCol2]) {
+                            chessBoardButtons[bBishopRow2][bBishopCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bBishopIcon2);
+                            bBishopRow2 = i;
+                            bBishopCol2 = j;
                             playerTurn = false;
                         }
                     }
                     else {
-                        if (e.getSource() == chessBoardButtons[w_bishop_row][w_bishop_col]) {
-                            chessBoardButtons[w_bishop_row][w_bishop_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_bishopIcon);
-                            w_bishop_row = i;
-                            w_bishop_col = j;
+                        if (e.getSource() == chessBoardButtons[wBishopRow][wBishopCol]) {
+                            chessBoardButtons[wBishopRow][wBishopCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wBishopIcon);
+                            wBishopRow = i;
+                            wBishopCol = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_bishop_row2][w_bishop_col2]) {
-                            chessBoardButtons[w_bishop_row2][w_bishop_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_bishopIcon2);
-                            w_bishop_row2 = i;
-                            w_bishop_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[wBishopRow2][wBishopCol2]) {
+                            chessBoardButtons[wBishopRow2][wBishopCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wBishopIcon);
+                            wBishopRow2 = i;
+                            wBishopCol2 = j;
                             playerTurn = true;
                         }
                     }
                     if (playerTurn) {
-                        if (e.getSource() == chessBoardButtons[b_queen_row][b_queen_col]) {
-                            chessBoardButtons[b_queen_row][b_queen_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_queenIcon);
-                            b_queen_row = i;
-                            b_queen_col = j;
+                        if (e.getSource() == chessBoardButtons[bQueenRow][bQueenCol]) {
+                            chessBoardButtons[bQueenRow][bQueenCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bQueenIcon);
+                            bQueenRow = i;
+                            bQueenCol = j;
                             playerTurn = false;
                         }
                     }
                     else {
-                        if (e.getSource() == chessBoardButtons[w_queen_row][w_queen_col]) {
-                            chessBoardButtons[w_queen_row][w_queen_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_queenIcon);
-                            w_queen_row = i;
-                            w_queen_col = j;
+                        if (e.getSource() == chessBoardButtons[wQueenRow][wQueenCol]) {
+                            chessBoardButtons[wQueenRow][wQueenCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wQueenIcon);
+                            wQueenRow = i;
+                            wQueenCol = j;
                             playerTurn = true;
                         }
                     }
                     if (playerTurn) {
-                        if (e.getSource() == chessBoardButtons[b_king_row][b_king_col]) {
-                            chessBoardButtons[b_king_row][b_king_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_kingIcon);
-                            b_king_row = i;
-                            b_king_col = j;
+                        if (e.getSource() == chessBoardButtons[bKingRow][bKingCol]) {
+                            chessBoardButtons[bKingRow][bKingCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bKingIcon);
+                            bKingRow = i;
+                            bKingCol = j;
                             playerTurn = false;
                         }
                     }
                     else {
-                        if (e.getSource() == chessBoardButtons[w_king_row][w_king_col]) {
-                            chessBoardButtons[w_king_row][w_king_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_kingIcon);
-                            w_king_row = i;
-                            w_king_col = j;
+                        if (e.getSource() == chessBoardButtons[wKingRow][wKingCol]) {
+                            chessBoardButtons[wKingRow][wKingCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wKingIcon);
+                            wKingRow = i;
+                            wKingCol = j;
                             playerTurn = true;
                         }
                     }
                     if (playerTurn) {
-                        if (e.getSource() == chessBoardButtons[b_pawn_row][b_pawn_col]) {
-                            chessBoardButtons[b_pawn_row][b_pawn_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon);
-                            b_pawn_row = i;
-                            b_pawn_col = j;
+                        if (e.getSource() == chessBoardButtons[bPawnRow][bPawnCol]) {
+                            chessBoardButtons[bPawnRow][bPawnCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon);
+                            bPawnRow = i;
+                            bPawnCol = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_pawn_row1][b_pawn_col1]) {
-                            chessBoardButtons[b_pawn_row1][b_pawn_col1].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon1);
-                            b_pawn_row1 = i;
-                            b_pawn_col1 = j;
+                        } else if (e.getSource() == chessBoardButtons[bPawnRow1][bPawnCol1]) {
+                            chessBoardButtons[bPawnRow1][bPawnCol1].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon1);
+                            bPawnRow1 = i;
+                            bPawnCol1 = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_pawn_row2][b_pawn_col2]) {
-                            chessBoardButtons[b_pawn_row2][b_pawn_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon2);
-                            b_pawn_row2 = i;
-                            b_pawn_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[bPawnRow2][bPawnCol2]) {
+                            chessBoardButtons[bPawnRow2][bPawnCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon2);
+                            bPawnRow2 = i;
+                            bPawnCol2 = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_pawn_row3][b_pawn_col3]) {
-                            chessBoardButtons[b_pawn_row3][b_pawn_col3].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon3);
-                            b_pawn_row3 = i;
-                            b_pawn_col3 = j;
+                        } else if (e.getSource() == chessBoardButtons[bPawnRow3][bPawnCol3]) {
+                            chessBoardButtons[bPawnRow3][bPawnCol3].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon3);
+                            bPawnRow3 = i;
+                            bPawnCol3 = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_pawn_row4][b_pawn_col4]) {
-                            chessBoardButtons[b_pawn_row4][b_pawn_col4].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon4);
-                            b_pawn_row4 = i;
-                            b_pawn_col4 = j;
+                        } else if (e.getSource() == chessBoardButtons[bPawnRow4][bPawnCol4]) {
+                            chessBoardButtons[bPawnRow4][bPawnCol4].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon4);
+                            bPawnRow4 = i;
+                            bPawnCol4 = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_pawn_row5][b_pawn_col5]) {
-                            chessBoardButtons[b_pawn_row5][b_pawn_col5].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon5);
-                            b_pawn_row5 = i;
-                            b_pawn_col5 = j;
+                        } else if (e.getSource() == chessBoardButtons[bPawnRow5][bPawnCol5]) {
+                            chessBoardButtons[bPawnRow5][bPawnCol5].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon5);
+                            bPawnRow5 = i;
+                            bPawnCol5 = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_pawn_row6][b_pawn_col6]) {
-                            chessBoardButtons[b_pawn_row6][b_pawn_col6].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon6);
-                            b_pawn_row6 = i;
-                            b_pawn_col6 = j;
+                        } else if (e.getSource() == chessBoardButtons[bPawnRow6][bPawnCol6]) {
+                            chessBoardButtons[bPawnRow6][bPawnCol6].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon6);
+                            bPawnRow6 = i;
+                            bPawnCol6 = j;
                             playerTurn = false;
-                        } else if (e.getSource() == chessBoardButtons[b_pawn_row7][b_pawn_col7]) {
-                            chessBoardButtons[b_pawn_row7][b_pawn_col7].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(b_pawnIcon7);
-                            b_pawn_row7 = i;
-                            b_pawn_col7 = j;
+                        } else if (e.getSource() == chessBoardButtons[bPawnRow7][bPawnCol7]) {
+                            chessBoardButtons[bPawnRow7][bPawnCol7].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(bPawnIcon7);
+                            bPawnRow7 = i;
+                            bPawnCol7 = j;
                             playerTurn = false;
                         }
                     }
                     else {
-                        if (e.getSource() == chessBoardButtons[w_pawn_row][w_pawn_col]) {
-                            chessBoardButtons[w_pawn_row][w_pawn_col].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon);
-                            w_pawn_row = i;
-                            w_pawn_col = j;
+                        if (e.getSource() == chessBoardButtons[wPawnRow][wPawnCol]) {
+                            chessBoardButtons[wPawnRow][wPawnCol].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon);
+                            wPawnRow = i;
+                            wPawnCol = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_pawn_row1][w_pawn_col1]) {
-                            chessBoardButtons[w_pawn_row1][w_pawn_col1].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon1);
-                            w_pawn_row1 = i;
-                            w_pawn_col1 = j;
+                        } else if (e.getSource() == chessBoardButtons[wPawnRow1][wPawnCol1]) {
+                            chessBoardButtons[wPawnRow1][wPawnCol1].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon1);
+                            wPawnRow1 = i;
+                            wPawnCol1 = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_pawn_row2][w_pawn_col2]) {
-                            chessBoardButtons[w_pawn_row2][w_pawn_col2].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon2);
-                            w_pawn_row2 = i;
-                            w_pawn_col2 = j;
+                        } else if (e.getSource() == chessBoardButtons[wPawnRow2][wPawnCol2]) {
+                            chessBoardButtons[wPawnRow2][wPawnCol2].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon2);
+                            wPawnRow2 = i;
+                            wPawnCol2 = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_pawn_row3][w_pawn_col3]) {
-                            chessBoardButtons[w_pawn_row3][w_pawn_col3].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon3);
-                            w_pawn_row3 = i;
-                            w_pawn_col3 = j;
+                        } else if (e.getSource() == chessBoardButtons[wPawnRow3][wPawnCol3]) {
+                            chessBoardButtons[wPawnRow3][wPawnCol3].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon3);
+                            wPawnRow3 = i;
+                            wPawnCol3 = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_pawn_row4][w_pawn_col4]) {
-                            chessBoardButtons[w_pawn_row4][w_pawn_col4].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon4);
-                            w_pawn_row4 = i;
-                            w_pawn_col4 = j;
+                        } else if (e.getSource() == chessBoardButtons[wPawnRow4][wPawnCol4]) {
+                            chessBoardButtons[wPawnRow4][wPawnCol4].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon4);
+                            wPawnRow4 = i;
+                            wPawnCol4 = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_pawn_row5][w_pawn_col5]) {
-                            chessBoardButtons[w_pawn_row5][w_pawn_col5].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon5);
-                            w_pawn_row5 = i;
-                            w_pawn_col5 = j;
+                        } else if (e.getSource() == chessBoardButtons[wPawnRow5][wPawnCol5]) {
+                            chessBoardButtons[wPawnRow5][wPawnCol5].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon5);
+                            wPawnRow5 = i;
+                            wPawnCol5 = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_pawn_row6][w_pawn_col6]) {
-                            chessBoardButtons[w_pawn_row6][w_pawn_col6].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon6);
-                            w_pawn_row6 = i;
-                            w_pawn_col6 = j;
+                        } else if (e.getSource() == chessBoardButtons[wPawnRow6][wPawnCol6]) {
+                            chessBoardButtons[wPawnRow6][wPawnCol6].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon6);
+                            wPawnRow6 = i;
+                            wPawnCol6 = j;
                             playerTurn = true;
-                        } else if (e.getSource() == chessBoardButtons[w_pawn_row7][w_pawn_col7]) {
-                            chessBoardButtons[w_pawn_row7][w_pawn_col7].setIcon(null);
-                            chessBoardButtons[i][j].setIcon(w_pawnIcon7);
-                            w_pawn_row7 = i;
-                            w_pawn_col7 = j;
+                        } else if (e.getSource() == chessBoardButtons[wPawnRow7][wPawnCol7]) {
+                            chessBoardButtons[wPawnRow7][wPawnCol7].setIcon(null);
+                            chessBoardButtons[i][j].setIcon(wPawnIcon7);
+                            wPawnRow7 = i;
+                            wPawnCol7 = j;
                             playerTurn = true;
                         }
                     }

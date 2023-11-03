@@ -1,50 +1,47 @@
 package com.company;
 
-
 import com.company.Pieces.GameConfig;
 
 import javax.swing.*;
 import java.awt.*;
 
-
 public class GamePanel  extends JFrame {
 
-    //buttons to place all over the screen
     public final JButton [][] chessBoardButtons = new JButton[8][8];
-    int b_knight_row = 7;
-    int b_knight_col = 1;
-    int b_knight_row2 = 7;
-    int b_knight_col2 = 6;
-    int w_knight_row2 = 0;
-    int w_knight_col2 = 6;
-    int w_knight_row = 0;
-    int w_knight_col = 1;
-    int b_tower_row = 7;
-    int b_tower_col = 0;
-    int b_tower_row2 = 7;
-    int b_tower_col2 = 7;
-    int w_tower_row = 0;
-    int w_tower_col = 0;
-    int w_tower_row2 = 0;
-    int w_tower_col2 = 7;
-    int b_bishop_row = 7;
-    int b_bishop_col = 2;
-    int b_bishop_row2 = 7;
-    int b_bishop_col2 = 5;
-    int w_bishop_row = 0;
-    int w_bishop_col = 2;
-    int w_bishop_row2 = 0;
-    int w_bishop_col2 = 5;
-    int b_queen_row = 7;
-    int b_queen_col = 3;
-    int w_queen_row = 0;
-    int w_queen_col = 3;
-    int b_king_row = 7;
-    int b_king_col = 4;
-    int w_king_row = 0;
-    int w_king_col = 4;
-    int w_pawn_row = 1;
-    int b_pawn_row = 6;
+    int bKnightRow = 7;
+    int bKnightCol = 1;
+    int bKnightRow2 = 7;
+    int bKnightCol2 = 6;
+    int wKnightRow2 = 0;
+    int wKnightCol2 = 6;
+    int wKnightRow = 0;
+    int wKnightCol = 1;
+    int bTowerRow = 7;
+    int bTowerCol = 0;
+    int bTowerRow2 = 7;
+    int bTowerCol2 = 7;
+    int wTowerRow = 0;
+    int wTowerCol = 0;
+    int wTowerRow2 = 0;
+    int wTowerCol2 = 7;
+    int bBishopRow = 7;
+    int bBishopCol = 2;
+    int bBishopRow2 = 7;
+    int bBishopCol2 = 5;
+    int wBishopRow = 0;
+    int wBishopCol = 2;
+    int wBishopRow2 = 0;
+    int wBishopCol2 = 5;
+    int bQueenRow = 7;
+    int bQueenCol = 3;
+    int wQueenRow = 0;
+    int wQueenCol = 3;
+    int bKingRow = 7;
+    int bKingCol = 4;
+    int wKingRow = 0;
+    int wKingCol = 4;
+    int wPawnRow = 1;
+    int bPawnRow = 6;
 
     GamePanel () {
         GameConfig gameConfig = new GameConfig(chessBoardButtons);
@@ -52,8 +49,6 @@ public class GamePanel  extends JFrame {
         Container container = getContentPane();
         container.setLayout(new GridLayout(8,8));
 
-
-        // Chessboard
         for (int i = 0 ; i < 8 ; i++) {
             for (int j = 0 ; j < 8 ; j ++ ) {
                 chessBoardButtons[i][j] = new JButton();
@@ -65,68 +60,64 @@ public class GamePanel  extends JFrame {
             }
         }
 
-        // pawns white
         for (int x = 0; x < 8 ; x ++){
-            ImageIcon w_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
-            chessBoardButtons[w_pawn_row][x].setIcon(w_pawnIcon);
+            ImageIcon wPawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn_w.png");
+            chessBoardButtons[wPawnRow][x].setIcon(wPawnIcon);
         }
 
-        // pawns black
         for (int x = 0; x < 8 ; x ++){
-            ImageIcon b_pawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
-            chessBoardButtons[b_pawn_row][x].setIcon(b_pawnIcon);
+            ImageIcon bPawnIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\pawn.png");
+            chessBoardButtons[bPawnRow][x].setIcon(bPawnIcon);
         }
 
-        //icons for each figure
-        ImageIcon w_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
-        chessBoardButtons[w_knight_row][w_knight_col].setIcon(w_knightIcon);
+        ImageIcon wKnightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
+        chessBoardButtons[wKnightRow][wKnightCol].setIcon(wKnightIcon);
 
-        ImageIcon w_knightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
-        chessBoardButtons[w_knight_row2][w_knight_col2].setIcon(w_knightIcon2);
+        ImageIcon wKnightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight_w.png");
+        chessBoardButtons[wKnightRow2][wKnightCol2].setIcon(wKnightIcon2);
 
-        ImageIcon b_knightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
-        chessBoardButtons[b_knight_row][b_knight_col].setIcon(b_knightIcon);
+        ImageIcon bKnightIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
+        chessBoardButtons[bKnightRow][bKnightCol].setIcon(bKnightIcon);
 
-        ImageIcon b_knightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
-        chessBoardButtons[b_knight_row2][b_knight_col2].setIcon(b_knightIcon2);
+        ImageIcon bKnightIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\knight.png");
+        chessBoardButtons[bKnightRow2][bKnightCol2].setIcon(bKnightIcon2);
 
-        ImageIcon b_towerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
-        chessBoardButtons[b_tower_row][b_tower_col].setIcon(b_towerIcon);
+        ImageIcon bTowerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
+        chessBoardButtons[bTowerRow][bTowerCol].setIcon(bTowerIcon);
 
-        ImageIcon b_towerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
-        chessBoardButtons[b_tower_row2][b_tower_col2].setIcon(b_towerIcon2);
+        ImageIcon bTowerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower.png");
+        chessBoardButtons[bTowerRow2][bTowerCol2].setIcon(bTowerIcon2);
 
-        ImageIcon w_towerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
-        chessBoardButtons[w_tower_row][w_tower_col].setIcon(w_towerIcon);
+        ImageIcon wTowerIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+        chessBoardButtons[wTowerRow][wTowerCol].setIcon(wTowerIcon);
 
-        ImageIcon w_towerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
-        chessBoardButtons[w_tower_row2][w_tower_col2].setIcon(w_towerIcon2);
+        ImageIcon wTowerIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\tower_w.png");
+        chessBoardButtons[wTowerRow2][wTowerCol2].setIcon(wTowerIcon2);
 
-        ImageIcon b_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
-        chessBoardButtons[b_bishop_row][b_bishop_col].setIcon(b_bishopIcon);
+        ImageIcon bBishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+        chessBoardButtons[bBishopRow][bBishopCol].setIcon(bBishopIcon);
 
-        ImageIcon b_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
-        chessBoardButtons[b_bishop_row2][b_bishop_col2].setIcon(b_bishopIcon2);
+        ImageIcon bBishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop.png");
+        chessBoardButtons[bBishopRow2][bBishopCol2].setIcon(bBishopIcon2);
 
-        ImageIcon w_bishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
-        chessBoardButtons[w_bishop_row][w_bishop_col].setIcon(w_bishopIcon);
+        ImageIcon wBishopIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
+        chessBoardButtons[wBishopRow][wBishopCol].setIcon(wBishopIcon);
 
-        ImageIcon w_bishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
-        chessBoardButtons[w_bishop_row2][w_bishop_col2].setIcon(w_bishopIcon2);
+        ImageIcon wBishopIcon2 = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\bishop_w.png");
+        chessBoardButtons[wBishopRow2][wBishopCol2].setIcon(wBishopIcon2);
 
-        ImageIcon b_queenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen.png");
-        chessBoardButtons[b_queen_row][b_queen_col].setIcon(b_queenIcon);
+        ImageIcon bQueenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen.png");
+        chessBoardButtons[bQueenRow][bQueenCol].setIcon(bQueenIcon);
 
-        ImageIcon w_queenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen_w.png");
-        chessBoardButtons[w_queen_row][w_queen_col].setIcon(w_queenIcon);
+        ImageIcon wQueenIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\queen_w.png");
+        chessBoardButtons[wQueenRow][wQueenCol].setIcon(wQueenIcon);
 
-        ImageIcon b_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king.png");
-        chessBoardButtons[b_king_row][b_king_col].setIcon(b_kingIcon);
+        ImageIcon bKingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king.png");
+        chessBoardButtons[bKingRow][bKingCol].setIcon(bKingIcon);
 
-        ImageIcon w_kingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king_w.png");
-        chessBoardButtons[w_king_row][w_king_col].setIcon(w_kingIcon);
+        ImageIcon wKingIcon = new ImageIcon("D:\\Program Files\\JetBrains\\Chess\\src\\com\\company\\Images\\king_w.png");
+        chessBoardButtons[wKingRow][wKingCol].setIcon(wKingIcon);
 
-        //window
         setSize(800,800);
         setResizable(false);
         setLocationRelativeTo(null);
